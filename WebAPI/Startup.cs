@@ -44,7 +44,10 @@ namespace WebAPI
             services.AddControllers();
             //services.AddSingleton<IProductService,ProductManager>();
             //services.AddSingleton<IProductDal, EfProductDal>();
-
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "My Api", Version = "v1" });
+            });
             services.AddCors();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -77,6 +80,9 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            else {
+                app.UseHsts();
+            }
             app.ConfigureCustomExceptionMiddleware();
 
             app.UseCors(builder=>builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
@@ -84,8 +90,11 @@ namespace WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseSwagger();
 
+         
             app.UseAuthentication();
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

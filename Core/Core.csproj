@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CrossCuttingConcerns\Caching\Redis\" />
+    <None Remove="Aspects\Autofac\Performance\" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include="Aspects\Autofac\Performance\" />
+  </ItemGroup>
 </Project>

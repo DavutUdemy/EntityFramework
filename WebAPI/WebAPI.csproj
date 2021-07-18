@@ -7,6 +7,9 @@
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.12" />
+    <PackageReference Include="XRoad.GlobalConfiguration" Version="1.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,4 +20,9 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <None Remove="XRoad.GlobalConfiguration" />
+    <None Remove="Swashbuckle.AspNetCore.Swagger" />
+    <None Remove="Swashbuckle.AspNetCore.SwaggerGen" />
+  </ItemGroup>
 </Project>

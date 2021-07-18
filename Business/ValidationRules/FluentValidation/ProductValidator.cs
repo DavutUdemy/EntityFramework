@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,6 @@ namespace Business.ValidationRules.FluentValidation
         {
             return arg.StartsWith("A");
         }
+   
     }
 }
